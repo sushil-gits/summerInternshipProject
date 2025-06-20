@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-app">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active animate__animated animate__fadeIn">
+            <div class="container">
+                <div class="logo animate__animated animate__bounceIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,2L1,12L4,12L4,21L10,21L10,15L14,15L14,21L20,21L20,12L23,12L12,2M12,4.5L18,10.5L18,11L17,11L17,19L15,19L15,13L9,13L9,19L7,19L7,11L6,11L6,10.5L12,4.5Z" />
+                    </svg>
+                </div>
+                <h1 class="animate__animated animate__fadeInUp">Quiz Master</h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Test your knowledge with our interactive quiz!</p>
+                <button id="start-btn" class="btn pulse animate__animated animate__fadeInUp animate__delay-2s">
+                    Start Quiz
+                    <span class="icon">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="stats">
+                    <div class="timer" id="timer">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                        </svg>
+                        <span id="time">30</span>s
+                    </div>
+                    <div class="score" id="score">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2L15.09,8.26L22,9.27L17,14.14L18.18,21.02L12,17.77L5.82,21.02L7,14.14L2,9.27L8.91,8.26L12,2Z" />
+                        </svg>
+                        <span id="points">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-count" id="question-count">Question 1/10</div>
+                <div class="question animate__animated" id="question">Question goes here</div>
+                
+                <div class="options" id="options">
+                    <!-- Options will be added dynamically -->
+                </div>
+                
+                <button id="next-btn" class="btn hide">
+                    Next Question
+                    <span class="icon">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <div class="container">
+                <div class="result-graphic" id="result-graphic">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <text x="18" y="20.5" class="percentage">0%</text>
+                    </svg>
+                </div>
+                
+                <h1 id="result-title">Quiz Completed!</h1>
+                <div class="result" id="result">You scored 0 out of 0</div>
+                <div class="feedback" id="feedback">Taking the first step is always important!</div>
+                
+                <div class="action-buttons">
+                    <button id="restart-btn" class="btn">
+                        <span class="icon">↻</span>
+                        Play Again
+                    </button>
+                    <button id="share-btn" class="btn secondary">
+                        <span class="icon">📤</span>
+                        Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
