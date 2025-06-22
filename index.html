@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons (optional, can use CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- User Section -->
+        <aside class="user-container">
+            <h2><i class="fas fa-user"></i> Users</h2>
+            <ul id="users" class="users"></ul>
+            <form class="user-form" id="user-form">
+                <input 
+                    id="username" 
+                    type="text" 
+                    placeholder="Enter username" 
+                    required 
+                    class="user-input"
+                    autocomplete="off"
+                />
+                <button id="set-username" class="btn" type="submit">
+                    <i class="fas fa-check"></i>
+                </button>
+            </form>
+        </aside>
+
+<!-- New Wrapper to hold main chat and chat history -->
+<div class="chat-wrapper">
+    <!-- Main Chat Section -->
+    <section class="main-section">
+        <header class="chat-header">
+            <h1><i class="fas fa-comments"></i> Real Time Chat</h1>
+            <button id="clear-history" class="btn" title="Clear Chat History">
+                <i class="fas fa-trash"></i>
+            </button>
+        </header>
+
+        <main class="chat-main">
+            <div id="messages" class="chat-messages"></div>
+            <div class="chat-form-container">
+                <form id="chat-form" class="chat-form" autocomplete="off">
+                    <input 
+                        id="msg" 
+                        type="text" 
+                        placeholder="Type your message..." 
+                        required 
+                        autocomplete="off"
+                        class="chat-input"
+                    />
+                    <button class="btn" type="submit" title="Send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </section>
+    <!-- Chat History Section -->
+    <aside class="chat-history-container">
+        <h2><i class="fas fa-clock"></i> Chat History</h2>
+        <div id="history-list" class="history-list"></div>
+    </aside>
+</div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
